@@ -1,26 +1,36 @@
 #include <Kernel/sys/_types/_size_t.h>
-#include <stdio.h>
-#include <string.h>
 
-// void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			i;
+	unsigned char	*str;
+
+	str = (unsigned char *)b;
+	i = 0;
+	while (i < len)
+	{
+		str[i] = (unsigned char)c;
+		i++;
+	}
+	return (b);
+}
+
+// #include <stdio.h>
+// #include <string.h>
+// int	main(void)
 // {
-// 	int	i;
+// 	const int size = 10;
+// 	int arr[size];
+// 	int i = 0;
 
-// 	i = 0;
-// 	while (i < len)
+// 	ft_memset(arr, 5, size * sizeof(int));
+// 	// memset(arr, 5, size * sizeof(int));
+
+// 	while (i < size)
 // 	{
-// 		b = (unsigned char)c;
+// 		printf("%d ", arr[i]);
 // 		i++;
 // 	}
-// 	return (b);
+// 	printf("\n");
+// 	return (0);
 // }
-
-int	main(void)
-{
-	void *b = NULL;
-	size_t len = 4;
-	int c = 65;
-	// printf("%p", ft_memset(b, c, len));
-	printf("%p", memset(b, c, len));
-	return (0);
-}

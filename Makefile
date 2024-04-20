@@ -18,11 +18,11 @@ CFLAGS = -Wall -Werror -Wextra
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	ar rc ${NAME} ${OBJS}
-	ranlib ${NAME}
+			ar rc ${NAME} ${OBJS}
+			ranlib ${NAME}
 
 %.o: %.c
-	${CC} ${CFLAGS} -I${HEAD_DIR} -c $< -o $@
+			${CC} ${CFLAGS} -I${HEAD_DIR} -c $< -o $@
 
 clean:
 			${RM} ${OBJS}
