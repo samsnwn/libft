@@ -2,29 +2,32 @@
 #include <stdlib.h>
 
 int		ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*buf;
 	int		i;
-	int		j;
-	int		k;
+	int		end;
+	int		start;
 
 	i = 0;
-	j = 0;
-	k = 0;
+	end = ft_strlen(s1) - 1;
+	start = 0;
 	buf = (char *)malloc(sizeof(char) * (ft_strlen(s1) - ft_strlen(set) + 1));
 	if (buf == NULL)
 		return (NULL);
-	while (s1[i] == set[k])
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	while (s1[i] != '\0')
+	while (end >= 0 && ft_strchr(set, s1[end]))
+		end--;
+	while (i <= end)
 	{
-		buf[j] = s1[i];
-		j++;
+		buf[start] = s1[i];
+		start++;
 		i++;
 	}
-	buf[j] = '\0';
+	buf[end] = '\0';
 	return (buf);
 }
 
@@ -38,10 +41,21 @@ int	ft_strlen(const char *s)
 	return (i);
 }
 
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	return (NULL);
+}
+
 int	main(void)
 {
-	char const *s = " astrainga ";
-	char const *set = " ";
+	char const *s = "astringa";
+	char const *set = "a";
 	printf("%s\n", ft_strtrim(s, set));
 	return (0);
 }
