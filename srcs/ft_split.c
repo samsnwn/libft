@@ -27,13 +27,21 @@ int	main(void)
 	char **res;
 	char const *s = "Split me babe";
 	char c = ' ';
+	int i = 0;
+	int j;
 
 	res = ft_split(s, c);
 
-	while (*res)
+	while (res[i])
 	{
-		printf("%s", *res);
-		res++;
+		j = 0;
+		while (res[i][j])
+		{
+			printf("%s", res[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
 	}
 
 	return (0);
