@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:44:14 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/22 16:25:30 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/22 18:03:23 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,21 @@ char	*ft_itoa(int n)
 		return (NULL);
 	// if (n == -2147483648)
 	// {
+	// 	;
+	// }
+	// if (n < 0)
+	// {
 	// }
 	if (n >= 10)
 	{
+		ft_itoa(n / 10);
+		ft_itoa(n % 10);
 	}
+	else
+		return (buf);
 }
+
+#include <stdio.h>
 
 int	main(void)
 {
