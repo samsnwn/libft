@@ -12,45 +12,64 @@
 
 #include "libft.h"
 
+int		get_sign(int n);
+int		get_length(int n);
+
 char	*ft_itoa(int n)
 {
-	char	*buf;
-	int		int_length;
-	int		i;
+	int		sign;
+	int		len;
+	char	*str;
 
-	i = 0;
-	int_length = sizeof(n);
-	buf = (char *)malloc(sizeof(char) * (int_length + 1));
-	if (!buf)
+	sign = get_sign(n);
+	len = get_length(n);
+	if (sign == -1)
+		len++;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
 		return (NULL);
-	// if (n == -2147483648)
-	// {
-	// 	;
-	// }
-	// if (n < 0)
-	// {
-	// }
-	if (n < 10)
+	str[len] = '\0';
+	while (len--)
 	{
-		while (i < int_length / 4)
+		str[len] = (n % 10) * sign + '0';
+		n = n / 10;
+	}
+	if (sign == -1)
+		str[0] = '-';
+	return (str);
+}
+
+int	get_sign(int n)
+{
+	if (n < 0)
+		return (-1);
+	else
+		return (1);
+}
+
+int	get_length(int n)
+{
+	int	len;
+
+	if (n == 0)
+		len = 1;
+	else
+	{
+		len = 0;
+		while (n != 0)
 		{
-			buf[i] = n + '0';
-			i++;
+			n = n / 10;
+			len++;
 		}
 	}
-	else if (n >= 10)
-	{
-		ft_itoa(n / 10);
-		ft_itoa(n % 10);
-	}
-	return (buf);
+	return (len);
 }
 
 #include <stdio.h>
 
 int	main(void)
 {
-	printf("%s\n", ft_itoa(567));
+	printf("%s\n", ft_itoa(5667574));
 	return (0);
 }
 
