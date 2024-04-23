@@ -72,10 +72,3 @@ int	main(void)
 	printf("%s\n", ft_itoa(5667574));
 	return (0);
 }
-
-/**
- * 1- If number has only one digit, change to char and copy to buffer
- * 2- If number is >= 10, divide by ten until you get only one digit,
-	and copy to buffer.
- *
- */
