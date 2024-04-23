@@ -27,23 +27,23 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (b);
 }
 
-// #include <stdio.h>
-// #include <string.h>
+#include <stdio.h>
+#include <string.h>
 
-// int	main(void)
-// {
-// 	const int	size = 10;
-// 	int			arr[size];
-// 	int			i;
+int	main(void)
+{
+	const int	size = 3;
+	int			arr[size];
+	int			i;
 
-// 	i = 0;
-// 	ft_memset(arr, 5, size * sizeof(int));
-// 	memset(arr, 2, size * sizeof(int));
-// 	while (i < size)
-// 	{
-// 		printf("%d ", arr[i]);
-// 		i++;
-// 	}
-// 	printf("\n");
-// 	return (0);
-// }
+	i = 0;
+	// ft_memset(arr, 0, size * sizeof(int));
+	memset(arr, 0, size * sizeof(int));
+	while (i < size)
+	{
+		printf("%d ", arr[i]);
+		i++;
+	}
+	printf("\n");
+	return (0);
+}

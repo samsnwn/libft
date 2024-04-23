@@ -17,24 +17,24 @@ char	*ft_strchr(const char *s, int c);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*buf;
 	int		i;
-	int		end;
 	int		start;
+	int		end;
+	char	*buf;
 
 	i = 0;
-	end = ft_strlen(s1) - 1;
 	start = 0;
+	end = ft_strlen(s1) - 1;
 	buf = (char *)malloc(sizeof(char) * (ft_strlen(s1) - ft_strlen(set) + 1));
-	if (buf == NULL)
+	if (!buf)
 		return (NULL);
-	while (s1[i] && ft_strchr(set, s1[i]))
-		i++;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
 	while (end >= 0 && ft_strchr(set, s1[end]))
 		end--;
-	while (i <= end)
+	while (start <= end)
 	{
-		buf[start] = s1[i];
+		buf[i] = s1[start];
 		start++;
 		i++;
 	}
