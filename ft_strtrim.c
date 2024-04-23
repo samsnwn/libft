@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:52:40 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/22 13:42:43 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:08:44 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,15 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-/*#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char const *s = "astringa";
-	char const *set = "a";
-	printf("%s\n", ft_strtrim(s, set));
-	return (0);
-}*/
+// int	main(void)
+// {
+// 	char const	*s;
+// 	char const	*set;
+
+// 	s = "ababaaaMy name is Simonbbaaabba";
+// 	set = "ab";
+// 	printf("%s\n", ft_strtrim(s, set));
+// 	return (0);
+// }
