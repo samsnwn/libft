@@ -34,14 +34,24 @@ SRCS = ft_strncmp.c\
 			ft_strtrim.c\
 			ft_substr.c\
 
+SRCS_BONUS = ft_lstadd_back.c\
+			ft_lstadd_front.c\
+			ft_lstlast.c\
+			ft_lstnew.c\
+			ft_lstsize.c\
+
 HEAD = libft.h
 OBJS = ${SRCS:.c=.o}
+OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 NAME = libft.a
 CC = cc
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra
 
 all: ${NAME}
+
+bonus : all
+	
 
 ${NAME}: ${OBJS}
 			ar rc ${NAME} ${OBJS}
