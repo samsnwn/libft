@@ -6,14 +6,11 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:52:40 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/23 12:08:44 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:08:58 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -40,27 +37,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	buf[end] = '\0';
 	return (buf);
-}
-
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strchr(const char *s, int c)
-{
-	while (*s)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	return (NULL);
 }
 
 // #include <stdio.h>

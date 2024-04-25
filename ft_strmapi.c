@@ -6,13 +6,11 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:23:09 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/22 13:42:22 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:08:22 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_strlen(const char *s);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -30,14 +28,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	buf[i] = '\0';
 	return (buf);
-}
-
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
 }

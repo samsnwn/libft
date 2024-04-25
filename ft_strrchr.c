@@ -3,33 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samcasti <samcasti@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:47:27 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/22 12:47:55 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:08:34 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_strlen(char *str)
-{
-	int	count;
-
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
-}
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	s_length;
-	int	i;
+	size_t	s_length;
+	size_t	i;
 
 	s_length = ft_strlen((char *)s);
 	i = s_length - 1;
-	while (i >= 0)
+	while (i > 0)
 	{
 		if (s[i] == (char)c)
 			return ((char *)&s[i]);

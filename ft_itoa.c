@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:44:14 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/23 11:10:14 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:43:16 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ int	get_length(int n)
 	return (len);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
 	printf("%s\n", ft_itoa(5667574));
 	return (0);
-}
+}*/

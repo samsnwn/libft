@@ -39,6 +39,10 @@ SRCS_BONUS = ft_lstadd_back.c\
 			ft_lstlast.c\
 			ft_lstnew.c\
 			ft_lstsize.c\
+			ft_lstclear.c\
+			ft_lstmap.c\
+			ft_lstiter.c\
+			ft_lstdelone.c\
 
 HEAD = libft.h
 OBJS = ${SRCS:.c=.o}
@@ -50,21 +54,27 @@ CFLAGS = -Wall -Werror -Wextra
 
 all: ${NAME}
 
-bonus : all
-	
+bonus : ${OBJS_BONUS}
+			ar rc ${NAME} ${OBJS_BONUS}
+			ranlib ${NAME}
+			mkdir bonus
+			mv *.o bonus
+		
 
 ${NAME}: ${OBJS}
 			ar rc ${NAME} ${OBJS}
 			ranlib ${NAME}
+			mkdir objects 
+			mv *.o objects
 
 %.o: %.c
-			${CC} ${CFLAGS} -I${HEAD} -c $< -o $@
+			${CC} ${CFLAGS} -c $< -o $@
 
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${OBJS_BONUS} 
 
 fclean:		clean
-			${RM} ${NAME}
+			${RM} ${NAME} -r objects bonus
 
 re: fclean all
 

@@ -6,9 +6,11 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:13:41 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/22 13:35:29 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 12:49:36 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

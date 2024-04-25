@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:44:38 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/23 16:42:25 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/24 17:36:50 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,24 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (str);
 }
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-int	main(void)
-{
-	const int	size = 3;
-	char		arr[size];
-	int			i;
-	char		*v;
+// int	main(void)
+// {
+// 	const int	size = 3;
+// 	char		arr[size];
+// 	int			i;
+// 	char		*v;
 
-	i = 0;
-	v = ft_memset(arr, 65, size * sizeof(int));
-	// v = memset(arr, 65, size * sizeof(int));
-	while (i < size)
-	{
-		printf("%s ", v);
-		i++;
-	}
-	printf("\n");
-	return (0);
-}
+// 	i = 0;
+// 	v = ft_memset(arr, 65, size * sizeof(int));
+// 	// v = memset(arr, 65, size * sizeof(int));
+// 	while (i < size)
+// 	{
+// 		printf("%s ", v);
+// 		i++;
+// 	}
+// 	printf("\n");
+// 	return (0);
+// }

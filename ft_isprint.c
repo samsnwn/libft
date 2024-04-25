@@ -3,19 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samcasti <samcasti@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:40:23 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/22 12:58:48 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 12:50:03 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isprint(int c)
 {
-	unsigned char	a;
-
-	a = c;
-	if (a < 32 || a > 126)
-		return (0);
-	return (1);
+	return (c >= 32 && c <= 126);
 }

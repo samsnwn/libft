@@ -3,19 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samcasti <samcasti@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:43:12 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/22 13:04:34 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 12:52:05 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_toupper(int c)
 {
-	unsigned char	a;
-
-	a = c;
-	if (a < 97 || a > 122)
-		return (a);
-	return (a - 32);
+	return (c >= 97 && c <= 122);
 }

@@ -3,19 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samcasti <samcasti@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:39:41 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/22 13:04:45 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 12:52:01 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
-{
-	unsigned char	a;
+#include "libft.h"
 
-	a = c;
-	if (a < 65 || a > 90)
-		return (a);
-	return (a + 32);
+int	ft_tolower(int c)
+{
+	return (c >= 65 && c <= 90);
 }

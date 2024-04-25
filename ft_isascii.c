@@ -3,19 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samcasti <samcasti@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:14:02 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/22 12:58:16 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 12:49:55 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isascii(int c)
 {
-	unsigned char	a;
-
-	a = c;
-	if (a < 0 || a > 127)
-		return (0);
-	return (1);
+	return (c >= 0 && c <= 127);
 }

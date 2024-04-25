@@ -6,46 +6,51 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:41:12 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/23 17:20:35 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 12:51:11 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int		ft_strlen(const char *s);
 int		number_ocurrences(char const *s, char c);
+void	ft_free(char **buffer);
+char	**output(char **buffer, char const *s, char c, int i);
+void	allocate(char **buffer, int new_word, int string_length);
 
 char	**ft_split(char const *s, char c)
 {
-	int		new_word;
-	int		string_length;
-	int		char_count;
 	char	**buffer;
 	int		i;
-	int		j;
 
-	i = 0;
+	i = number_ocurrences(s, c);
+	buffer = (char **)malloc(sizeof(char) * (i + 2));
+	if (!buffer)
+		return (NULL);
+	return (output(buffer, s, c, i));
+}
+
+char	**output(char **buffer, char const *s, char c, int i)
+{
+	int	new_word;
+	int	string_length;
+
 	new_word = 0;
 	string_length = 0;
-	char_count = number_ocurrences(s, c);
-	buffer = (char **)malloc(sizeof(char) * (char_count + 2));
-	while (s[string_length] && i < char_count + 1)
+	while (s[string_length] && new_word < i + 1)
 	{
 		string_length = 0;
 		while (s[string_length] != c && s[string_length])
 			string_length++;
-		buffer[new_word] = (char *)malloc(sizeof(char) * (string_length + 1));
-		j = 0;
-		while (s[j] && s[j] != c)
+		allocate(buffer, new_word, string_length);
+		i = 0;
+		while (s[i] && s[i] != c)
 		{
-			buffer[new_word][j] = s[j];
-			j++;
+			buffer[new_word][i] = s[i];
+			i++;
 		}
 		buffer[new_word][string_length] = '\0';
 		new_word++;
-		i++;
-		s += j;
+		s = s + i;
 		while (*s == c)
 			s++;
 	}
@@ -53,14 +58,14 @@ char	**ft_split(char const *s, char c)
 	return (buffer);
 }
 
-int	ft_strlen(const char *s)
+void	allocate(char **buffer, int new_word, int string_length)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	buffer[new_word] = (char *)malloc(sizeof(char) * (string_length + 1));
+	if (!buffer[new_word])
+	{
+		ft_free(buffer);
+		return ;
+	}
 }
 
 int	number_ocurrences(char const *s, char c)
@@ -79,21 +84,33 @@ int	number_ocurrences(char const *s, char c)
 	return (count);
 }
 
-int	main(void)
+void	ft_free(char **buffer)
 {
-	char const	*s;
-	char		c;
-	char		**res;
-	int			i;
+	char	*str;
 
-	s = "Split me babe";
-	c = ' ';
-	i = 0;
-	res = ft_split(s, c);
-	while (res[i])
+	str = *buffer;
+	while (*str)
 	{
-		printf("%s", res[i]);
-		i++;
+		free(str);
+		str++;
 	}
-	return (0);
 }
+
+// int	main(void)
+// {
+// 	char const	*s;
+// 	char		c;
+// 	char		**res;
+// 	int			i;
+
+// 	s = "Split me babe";
+// 	c = ' ';
+// 	i = 0;
+// 	res = ft_split(s, c);
+// 	while (res[i])
+// 	{
+// 		printf("%s,", res[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
