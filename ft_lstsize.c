@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:47:05 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/25 14:40:18 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 14:58:17 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,24 @@ int	ft_lstsize(t_list *lst)
 	return (count);
 }
 
-int main()
-{
-	int c;
-	t_list *elem = NULL;
-	t_list *elem2 = NULL;
+// int main()
+// {
+// 	int c;
+// 	t_list *elem = NULL;
+// 	t_list *elem2 = NULL;
 
-    elem->next = elem2;
+//     elem->next = elem2;
 
-    c = ft_lstsize(elem) + 48;
-    write(1, &c, 1);
-    write(1, "\n", 1);
-    elem->next = NULL;
-    c = ft_lstsize(elem) + 48;
-    write(1, &c, 1);
-    write(1, "\n", 1);
-    elem = NULL;
-    c = ft_lstsize(elem) + 48;
-    write(1, &c, 1);
-    write(1, "\n", 1);
+//     c = ft_lstsize(elem) + 48;
+//     write(1, &c, 1);
+//     write(1, "\n", 1);
+//     elem->next = NULL;
+//     c = ft_lstsize(elem) + 48;
+//     write(1, &c, 1);
+//     write(1, "\n", 1);
+//     elem = NULL;
+//     c = ft_lstsize(elem) + 48;
+//     write(1, &c, 1);
+//     write(1, "\n", 1);
 
-}
+// }

@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:45:52 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/25 12:49:27 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:06:01 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,31 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
 	}
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
 	return (NULL);
 }
 
-/*#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-int	main(void)
-{
-	char *str = "astring";
-	int c = 'r';
-	printf("%p\n", ft_strchr(str, c));
-	printf("%p\n", strchr(str, c));
-	return (0);
-}*/
+// int	main(void)
+// {
+// 	char	*str;
+// 	int		c;
+
+// 	str = "tripouille";
+// 	c = 0;
+// 	printf("%s\n", ft_strchr(str, c));
+// 	printf("%s\n", strchr(str, c));
+// 	return (0);
+// }

@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:47:27 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/25 13:08:34 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:44:59 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,33 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	s_length;
-	size_t	i;
+	int		i;
+	char	*new;
 
-	s_length = ft_strlen((char *)s);
-	i = s_length - 1;
-	while (i > 0)
+	i = 0;
+	new = NULL;
+	while (s[i])
 	{
 		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+			new = ((char *)&s[i]);
+		i++;
 	}
-	return (NULL);
+	if (s[i] == (char)c)
+		new = ((char *)&s[i]);
+	return (new);
 }
 
-/*#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-int	main(void)
-{
-	char *str = "stringsing";
-	int c = 's';
-	printf("%s\n", ft_strrchr(str, c));
-	printf("%s\n", strrchr(str, c));
-	return (0);
-}*/
+// int	main(void)
+// {
+// 	char	*str;
+// 	int		c;
+
+// 	str = "stringsing";
+// 	c = 'x';
+// 	printf("%s\n", ft_strrchr(str, c));
+// 	printf("%s\n", strrchr(str, c));
+// 	return (0);
+// }
