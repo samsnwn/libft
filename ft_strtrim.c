@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:52:40 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/26 13:16:31 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:24:55 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1) - 1;
+	if (!s1 || !set)
+		return (NULL);
 	if (ft_strlen(s1) == 0)
 		return (ft_strdup(""));
 	while (ft_strchr(set, s1[start]))
@@ -33,23 +35,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	while (start <= end)
 	{
-		buf[i] = s1[start];
-		start++;
+		buf[i] = s1[start + i];
 		i++;
 	}
 	buf[end + 1] = '\0';
 	return (buf);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int	main(void)
-// {
-// 	char const	*s;
-// 	char const	*set;
+int	main(void)
+{
+	char const	*s;
+	char const	*set;
 
-// 	s = "ababaaaMy name is Simonbbaaabba";
-// 	set = "ab";
-// 	printf("%s\n", ft_strtrim(s, set));
-// 	return (0);
-// }
+	s = "ababaaaMy name is Simonbbaaabba";
+	set = "ab";
+	printf("%s\n", ft_strtrim(s, set));
+	return (0);
+}

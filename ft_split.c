@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:41:12 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/26 13:20:23 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:17:08 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,16 +84,17 @@ int	number_ocurrences(char const *s, char c)
 	return (count);
 }
 
-void	ft_free(char **buffer)
+void	ft_free(char **buffer, int count)
 {
-	char	*str;
+	int	i;
 
-	str = *buffer;
-	while (*str)
+	i = 0;
+	while (i < count)
 	{
-		free(str);
-		str++;
+		free(buffer[i]);
+		i++;
 	}
+	free(buffer)
 }
 
 // int	main(void)
