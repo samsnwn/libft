@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:52:40 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/25 13:08:58 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/26 12:05:41 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	buf = (char *)malloc(sizeof(char) * (ft_strlen(s1) - ft_strlen(set) + 1));
+	if (ft_strlen(s1) == 0)
+		return (ft_strdup(""));
+	buf = (char *)malloc(sizeof(char) * (ft_strlen(s1) - (ft_strlen(set) * 2)
+				+ 1));
 	if (!buf)
 		return (NULL);
 	while (s1[start] && ft_strchr(set, s1[start]))
@@ -35,7 +38,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 		i++;
 	}
-	buf[end] = '\0';
+	buf[end + 1] = '\0';
 	return (buf);
 }
 

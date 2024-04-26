@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:46:57 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/25 18:39:09 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/26 10:32:37 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (length);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char *dst = malloc(10 * sizeof(char)); // Allocate memory for dst
-	if (dst == NULL)
-	{
-		// Handle memory allocation failure
-		return (1);
-	}
-	const char *src = "copy this";
-	size_t dstsize = 10;
-	printf("%zu", ft_strlcpy(dst, src, dstsize));
-	free(dst); // Don't forget to free the allocated memory
-	return (0);
-}
+// int	main(void)
+// {
+// 	char *dst = malloc(10 * sizeof(char)); // Allocate memory for dst
+// 	if (dst == NULL)
+// 	{
+// 		// Handle memory allocation failure
+// 		return (1);
+// 	}
+// 	const char *src = "copy this";
+// 	size_t dstsize = 10;
+// 	printf("%zu", ft_strlcpy(dst, src, dstsize));
+// 	free(dst); // Don't forget to free the allocated memory
+// 	return (0);
+// }
