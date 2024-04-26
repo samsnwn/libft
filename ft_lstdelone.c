@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:45:53 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/24 17:10:53 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:35:40 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	(*del)(lst->content);
-	free(del);
+	del(lst->content);
+	free(lst);
 }

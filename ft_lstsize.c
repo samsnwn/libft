@@ -6,22 +6,23 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:47:05 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/25 14:58:17 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:44:03 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 int	ft_lstsize(t_list *lst)
 {
-	int	count;
+	t_list	*curr;
+	int		count;
 
+	curr = lst;
 	count = 0;
-	while (lst->next != NULL)
+	while (curr)
 	{
+		curr = curr->next;
 		count++;
-		lst = lst->next;
 	}
 	return (count);
 }

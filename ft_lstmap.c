@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:46:34 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/24 17:23:25 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:51:16 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,20 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
+	t_list	*new_obj;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
+	if (!lst || !f || !del)
 		return (NULL);
-	while (lst != NULL)
+	new = NULL;
+	while (lst)
 	{
-		new->content = f(lst->content);
-		(*del)(new->content);
+		new_obj = ft_lstnew(f(lst->content));
+		if (!new_obj)
+		{
+			ft_lstclear(&new, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new, new_obj);
 		lst = lst->next;
 	}
 	return (new);

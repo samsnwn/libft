@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:43:45 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/24 18:37:46 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:02:30 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@
 // 	}
 // 	// dereference pointer to pointer to first node of the list.
 // 	curr = *lst;
-// 	// Assign NULL to member next of the node we are creating to say it is the
-// last node of the list
-// 	new->next = NULL;
 // 	// Exit condition: until the next node is Null aka until member
 //*next is NULL.
 // 	while (curr->next != NULL)
@@ -52,7 +49,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	curr = *lst;
-	new->next = NULL;
 	while (curr->next != NULL)
 	{
 		curr = curr->next;
