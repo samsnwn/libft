@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd);
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -37,9 +34,4 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		ft_putchar_fd(n + '0', fd);
 	}
-}
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
 }

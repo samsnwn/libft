@@ -13,23 +13,18 @@ OBJS = ${SRCS:.c=.o}
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 NAME = libft.a
 CC = cc
-RM = rm -f -r objects bonus
+RM = rm -f
 CFLAGS = -Wall -Werror -Wextra
 
 all : ${NAME}
 
-bonus : ${OBJS_BONUS}
-	ar rc ${NAME} ${OBJS_BONUS}
-	ranlib ${NAME}
-	mkdir bonus
-	mv *.o bonus
-		
-
 ${NAME} : ${OBJS}
 	ar rc ${NAME} ${OBJS}
 	ranlib ${NAME}
-	mkdir objects 
-	mv *.o objects
+
+bonus : ${OBJS_BONUS}
+	ar rc ${NAME} ${OBJS_BONUS}
+	ranlib ${NAME}
 
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
