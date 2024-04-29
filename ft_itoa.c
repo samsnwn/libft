@@ -25,10 +25,9 @@ char	*ft_itoa(int n)
 	len = get_length(n);
 	if (sign == -1)
 		len++;
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	str = ft_calloc((len + 1), sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	str[len] = '\0';
 	while (len--)
 	{
 		str[len] = (n % 10) * sign + '0';
