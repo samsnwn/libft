@@ -12,45 +12,46 @@
 
 #include "libft.h"
 
-int		number_ocurrences(char const *s, char c);
-void	ft_free(char **buffer);
+int		words_count(char const *s, char c);
+void	ft_free(char **buffer, int count);
 char	**output(char **buffer, char const *s, char c, int i);
-void	allocate(char **buffer, int new_word, int string_length);
+void	allocate_free(char **buffer, int new_word, int string_length,
+			int word_count);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**buffer;
-	int		i;
+	int		word_count;
 
-	i = number_ocurrences(s, c);
-	buffer = (char **)malloc(sizeof(char) * (i + 2));
+	word_count = words_count(s, c);
+	buffer = (char **)malloc(sizeof(char) * (word_count + 1));
 	if (!buffer)
 		return (NULL);
-	return (output(buffer, s, c, i));
+	return (output(buffer, s, c, word_count));
 }
 
-char	**output(char **buffer, char const *s, char c, int i)
+char	**output(char **buffer, char const *s, char c, int word_count)
 {
 	int	new_word;
-	int	string_length;
+	int	i;
 
 	new_word = 0;
-	string_length = 0;
-	while (s[string_length] && new_word < i + 1)
+	i = 0;
+	while (s[i] && new_word < word_count + 1)
 	{
-		string_length = 0;
-		while (s[string_length] != c && s[string_length])
-			string_length++;
-		allocate(buffer, new_word, string_length);
 		i = 0;
-		while (s[i] && s[i] != c)
-		{
-			buffer[new_word][i] = s[i];
+		while (s[i] != c && s[i])
 			i++;
+		allocate_free(buffer, new_word, i, word_count);
+		word_count = 0;
+		while (s[word_count] && s[word_count] != c)
+		{
+			buffer[new_word][word_count] = s[word_count];
+			word_count++;
 		}
-		buffer[new_word][string_length] = '\0';
+		buffer[new_word][i] = '\0';
 		new_word++;
-		s = s + i;
+		s = s + word_count;
 		while (*s == c)
 			s++;
 	}
@@ -58,17 +59,15 @@ char	**output(char **buffer, char const *s, char c, int i)
 	return (buffer);
 }
 
-void	allocate(char **buffer, int new_word, int string_length)
+void	allocate_free(char **buffer, int new_word, int string_length,
+		int word_count)
 {
 	buffer[new_word] = (char *)malloc(sizeof(char) * (string_length + 1));
 	if (!buffer[new_word])
-	{
-		ft_free(buffer);
-		return ;
-	}
+		ft_free(buffer, word_count);
 }
 
-int	number_ocurrences(char const *s, char c)
+int	words_count(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -94,24 +93,26 @@ void	ft_free(char **buffer, int count)
 		free(buffer[i]);
 		i++;
 	}
-	free(buffer)
+	free(buffer);
 }
 
-// int	main(void)
-// {
-// 	char const	*s;
-// 	char		c;
-// 	char		**res;
-// 	int			i;
+#include <stdio.h>
 
-// 	s = "Split me babe";
-// 	c = ' ';
-// 	i = 0;
-// 	res = ft_split(s, c);
-// 	while (res[i])
-// 	{
-// 		printf("%s,", res[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }
+int	main(void)
+{
+	char const	*s;
+	char		c;
+	char		**res;
+	int			i;
+
+	s = "Splitxmexbabe";
+	c = 'x';
+	i = 0;
+	res = ft_split(s, c);
+	while (res[i])
+	{
+		printf("%s,", res[i]);
+		i++;
+	}
+	return (0);
+}
