@@ -23,6 +23,8 @@ char	**ft_split(char const *s, char c)
 	char	**buffer;
 	int		word_count;
 
+	if (!s)
+		return (NULL);
 	word_count = words_count(s, c);
 	buffer = (char **)malloc(sizeof(char) * (word_count + 1));
 	if (!buffer)
@@ -96,23 +98,23 @@ void	ft_free(char **buffer, int count)
 	free(buffer);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char const	*s;
-	char		c;
-	char		**res;
-	int			i;
+// int	main(void)
+// {
+// 	char const	*s;
+// 	char		c;
+// 	char		**res;
+// 	int			i;
 
-	s = "Splitxmexbabe";
-	c = 'x';
-	i = 0;
-	res = ft_split(s, c);
-	while (res[i])
-	{
-		printf("%s,", res[i]);
-		i++;
-	}
-	return (0);
-}
+// 	s = "Splitxmexbabe";
+// 	c = 'x';
+// 	i = 0;
+// 	res = ft_split(s, c);
+// 	while (res[i])
+// 	{
+// 		printf("%s,", res[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
