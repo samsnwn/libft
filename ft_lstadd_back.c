@@ -56,19 +56,25 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	curr->next = new;
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
 // int	main(void)
 // {
-// 	t_list *root;
+// 	int		a;
+// 	int		b;
+// 	int		c;
+// 	t_list	*root;
 
-// 	root->content = 15;
-// 	root->next = NULL;
-// 	ft_lstadd_back(&root, -2);
-// 	ft_lstadd_back(&root, 11);
-
+// 	a = 15;
+// 	b = -2;
+// 	c = 11;
+// 	root = ft_lstnew(&a);
+// 	ft_lstadd_back(&root, ft_lstnew(&b));
+// 	ft_lstadd_back(&root, ft_lstnew(&c));
 // 	for (t_list *curr = root; curr != NULL; curr = curr->next)
 // 	{
-// 		printf("%d\n", curr->content);
+// 		printf("%d\n", *(int *)curr->content);
 // 	}
+// 	ft_lstclear(&root, del);
+// 	return (0);
 // }

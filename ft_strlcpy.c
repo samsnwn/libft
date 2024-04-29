@@ -34,15 +34,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 // int	main(void)
 // {
-// 	char *dst = malloc(10 * sizeof(char)); // Allocate memory for dst
+// 	char *dst = malloc(10 * sizeof(char));
 // 	if (dst == NULL)
-// 	{
-// 		// Handle memory allocation failure
 // 		return (1);
-// 	}
 // 	const char *src = "copy this";
 // 	size_t dstsize = 10;
 // 	printf("%zu", ft_strlcpy(dst, src, dstsize));
-// 	free(dst); // Don't forget to free the allocated memory
+// 	free(dst);
 // 	return (0);
 // }

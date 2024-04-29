@@ -27,24 +27,24 @@ int	ft_lstsize(t_list *lst)
 	return (count);
 }
 
-// int main()
+// #include <stdio.h>
+
+// int	main(void)
 // {
-// 	int c;
-// 	t_list *elem = NULL;
-// 	t_list *elem2 = NULL;
+// 	int		*a;
+// 	int		*b;
+// 	int		*c;
+// 	t_list	*root;
 
-//     elem->next = elem2;
-
-//     c = ft_lstsize(elem) + 48;
-//     write(1, &c, 1);
-//     write(1, "\n", 1);
-//     elem->next = NULL;
-//     c = ft_lstsize(elem) + 48;
-//     write(1, &c, 1);
-//     write(1, "\n", 1);
-//     elem = NULL;
-//     c = ft_lstsize(elem) + 48;
-//     write(1, &c, 1);
-//     write(1, "\n", 1);
-
+// 	a = malloc(sizeof(int));
+// 	b = malloc(sizeof(int));
+// 	c = malloc(sizeof(int));
+// 	*a = 1;
+// 	*b = 2;
+// 	root = ft_lstnew(a);
+// 	ft_lstadd_back(&root, ft_lstnew(b));
+// 	ft_lstadd_back(&root, ft_lstnew(c));
+// 	printf("Size of list: %d\n", ft_lstsize(root)); // Should print '3'
+// 	ft_lstclear(&root, del);
+// 	return (0);
 // }

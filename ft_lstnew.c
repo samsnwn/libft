@@ -23,3 +23,16 @@ t_list	*ft_lstnew(void *content)
 	new->next = NULL;
 	return (new);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int		a;
+// 	t_list	*new;
+
+// 	a = 5;
+// 	new = ft_lstnew(&a);
+// 	printf("%d\n", *(int *)new->content);
+// 	return (0);
+// }

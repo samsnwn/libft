@@ -27,3 +27,24 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	const char *buffer = "Hello World";
+// 	char c = 'W';
+
+// 	char *result = ft_memchr(buffer, c, 11);
+
+// 	if (result != NULL)
+// 	{
+// 		printf("Found character in buffer: %s\n", result);
+// 	}
+// 	else
+// 	{
+// 		printf("Did not find character in buffer\n");
+// 	}
+
+// 	return (0);
+// }

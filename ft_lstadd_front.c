@@ -43,3 +43,26 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int		a;
+// 	int		b;
+// 	int		c;
+// 	t_list	*root;
+
+// 	a = 1;
+// 	b = 2;
+// 	c = 3;
+// 	root = ft_lstnew(&a);
+// 	ft_lstadd_front(&root, ft_lstnew(&b));
+// 	ft_lstadd_front(&root, ft_lstnew(&c));
+// 	for (t_list *curr = root; curr != NULL; curr = curr->next)
+// 	{
+// 		printf("%d\n", *(int *)curr->content);
+// 	}
+// 	ft_lstclear(&root, del);
+// 	return (0);
+// }

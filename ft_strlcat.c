@@ -33,3 +33,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[i + j] = '\0';
 	return (i + ft_strlen(src));
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	char		dst[20] = "Hello";
+// 	const char	*src = " World";
+// 	size_t		dstsize;
+// 	size_t		result;
+
+// 	dstsize = sizeof(dst);
+// 	result = ft_strlcat(dst, src, dstsize);
+// 	printf("After strlcat, dst: %s\n", dst);
+// 	printf("Return value: %zu\n", result);
+// 	return (0);
+// }

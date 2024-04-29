@@ -29,3 +29,16 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	const char	*s1 = "Hello World";
+// 	const char	*s2 = "Hello world";
+// 	int			result;
+
+// 	result = ft_memcmp(s1, s2, 11);
+// 	printf("Result of memcmp: %d\n", result);
+// 	return (0);
+// }

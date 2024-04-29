@@ -28,10 +28,26 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-/* int	main(void)
-{
-	void *s = 0;
-	size_t n = 7;
-	ft_bzero(s, n);
-	return (0);
-} */
+// #include <stdio.h>
+// #include <strings.h>
+
+// int	main(void)
+// {
+// 	char s1[50] = "Hello, World!";
+// 	char s2[50] = "Hello, World!";
+// 	size_t n = 14;
+
+// 	ft_bzero(s1, n);
+// 	bzero(s2, n);
+
+// 	if (memcmp(s1, s2, n) == 0)
+// 	{
+// 		printf("ft_bzero works correctly\n");
+// 	}
+// 	else
+// 	{
+// 		printf("ft_bzero does not work correctly\n");
+// 	}
+
+// 	return (0);
+// }

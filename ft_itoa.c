@@ -64,10 +64,10 @@ int	get_length(int n)
 	return (len);
 }
 
-/*#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	printf("%s\n", ft_itoa(5667574));
-	return (0);
-}*/
+// int	main(void)
+// {
+// 	printf("%s\n", ft_itoa(5667574));
+// 	return (0);
+// }

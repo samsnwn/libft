@@ -32,19 +32,11 @@ void	*ft_memset(void *b, int c, size_t len)
 
 // int	main(void)
 // {
-// 	const int	size = 3;
-// 	char		arr[size];
-// 	int			i;
-// 	char		*v;
+// 	char	buffer[10];
 
-// 	i = 0;
-// 	v = ft_memset(arr, 65, size * sizeof(int));
-// 	// v = memset(arr, 65, size * sizeof(int));
-// 	while (i < size)
-// 	{
-// 		printf("%s ", v);
-// 		i++;
-// 	}
-// 	printf("\n");
+// 	// ft_memset(buffer, 'a', sizeof(buffer) - 1);
+// 	memset(buffer, 'a', sizeof(buffer) - 1);
+// 	buffer[sizeof(buffer) - 1] = '\0'; // Null-terminate the buffer
+// 	printf("Buffer after memset: %s\n", buffer);
 // 	return (0);
 // }

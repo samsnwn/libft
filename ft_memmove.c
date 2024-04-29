@@ -40,3 +40,15 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	char	buffer[11] = "abcdefghij";
+
+// 	printf("Before memmove: %s\n", buffer);
+// 	ft_memmove(buffer + 4, buffer, 6);
+// 	printf("After memmove: %s\n", buffer);
+// 	return (0);
+// }

@@ -28,14 +28,30 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 	return (buf);
 }
-/*
-int	main(void)
-{
-	size_t	size;
-	size_t	count;
 
-	size = 7;
-	count = 7;
-	ft_calloc(count, size);
-	return (0);
-} */
+// #include <stdio.h>
+// #include <string.h>
+
+// int	main(void)
+// {
+// 	size_t	size;
+// 	size_t	count;
+// 	void	*buf1;
+// 	void	*buf2;
+
+// 	size = 7;
+// 	count = 7;
+// 	buf1 = ft_calloc(count, size);
+// 	buf2 = calloc(count, size);
+// 	if (memcmp(buf1, buf2, count * size) == 0)
+// 	{
+// 		printf("works\n");
+// 	}
+// 	else
+// 	{
+// 		printf("does not work correctly\n");
+// 	}
+// 	free(buf1);
+// 	free(buf2);
+// 	return (0);
+// }
