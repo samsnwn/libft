@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
+char	*create_buffer(char *str, int start, int end);
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
 	size_t	start;
 	size_t	end;
 	char	*buf;
 
-	i = 0;
 	start = 0;
 	end = ft_strlen(s1) - 1;
 	if (!s1 || !set)
@@ -32,12 +32,24 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	if (end - (start - 1) <= 0 || start >= ft_strlen(s1))
 		return (ft_strdup(""));
+	buf = create_buffer((char *)s1, start, end);
+	if (!buf)
+		return (NULL);
+	return (buf);
+}
+
+char	*create_buffer(char *str, int start, int end)
+{
+	char	*buf;
+	int		i;
+
+	i = 0;
 	buf = ft_calloc(end - (start - 1) + 1, sizeof(char));
 	if (!buf)
 		return (NULL);
 	while (start <= end)
 	{
-		buf[i] = s1[start];
+		buf[i] = str[start];
 		start++;
 		i++;
 	}
