@@ -24,14 +24,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > ft_strlen(s + start))
 		len = ft_strlen(s + start);
-	substring = ft_calloc(len + 1, sizeof(char));
+	substring = (char *)malloc(sizeof(char) * (len + 1));
 	if (substring == NULL)
 		return (NULL);
-	while (i < len && s[i] != '\0')
+	while (i < len && s[i])
 	{
-		substring[i] = s[start + i];
+		substring[i] = s[start];
+		start++;
 		i++;
 	}
+	substring[i] = '\0';
 	return (substring);
 }
 
