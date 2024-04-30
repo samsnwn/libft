@@ -32,23 +32,23 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (0);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	const char *haystack = "Hello World";
-	const char *needle = "World";
+// int	main(void)
+// {
+// 	const char *haystack = "Hello World";
+// 	const char *needle = "World";
 
-	char *result = ft_strnstr(haystack, needle, 11);
+// 	char *result = ft_strnstr(haystack, needle, 11);
 
-	if (result != NULL)
-	{
-		printf("Found needle in haystack: %s\n", result);
-	}
-	else
-	{
-		printf("Did not find needle in haystack\n");
-	}
+// 	if (result != NULL)
+// 	{
+// 		printf("Found needle in haystack: %s\n", result);
+// 	}
+// 	else
+// 	{
+// 		printf("Did not find needle in haystack\n");
+// 	}
 
-	return (0);
-}
+// 	return (0);
+// }
