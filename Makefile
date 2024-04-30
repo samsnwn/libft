@@ -22,7 +22,7 @@ ${NAME} : ${OBJS}
 	ar rc ${NAME} ${OBJS}
 	ranlib ${NAME}
 
-bonus : ${OBJS_BONUS}
+bonus : ${NAME} ${OBJS_BONUS}
 	ar rc ${NAME} ${OBJS_BONUS}
 	ranlib ${NAME}
 
