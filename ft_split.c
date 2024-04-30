@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:41:12 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/26 14:17:08 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/30 09:57:56 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void	free_buffer(char **buffer, int count)
 // 	char		**res;
 // 	int			i;
 
-// 	s = "lorem ipsum dolor sit amet,consectetur adipiscing elit. Sed non risus. Suspendisse";
+// 	s = "lorem ipsum dolor sit amet,consectetur";
 // 	c = ' ';
 // 	i = 0;
 // 	res = ft_split(s, c);

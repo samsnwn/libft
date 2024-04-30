@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:46:20 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/24 17:13:20 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/30 09:57:09 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-#include <stdio.h>
-
 void	increment(void *content)
 {
 	*(int *)content += 1;
 }
+
+// #include <stdio.h>
 
 // int	main(void)
 // {

@@ -6,7 +6,7 @@
 /*   By: samcasti <samcasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:43:45 by samcasti          #+#    #+#             */
-/*   Updated: 2024/04/26 14:02:30 by samcasti         ###   ########.fr       */
+/*   Updated: 2024/04/30 09:56:48 by samcasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	curr->next = new;
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
 // int	main(void)
 // {
