@@ -51,12 +51,12 @@ re: fclean all
 # all : ${NAME}
 
 # ${NAME} : ${OBJS}
-# 	ar rc ${NAME} ${OBJS}
-# 	ranlib ${NAME}
+# 	ar rcs ${NAME} ${OBJS}
+
 
 # bonus : ${NAME} ${OBJS_BONUS}
-# 	ar rc ${NAME} ${OBJS_BONUS}
-# 	ranlib ${NAME}
+# 	ar rcs ${NAME} ${OBJS_BONUS}
+
 
 # %.o: %.c
 # 	${CC} ${CFLAGS} -c $< -o $@
